@@ -65,11 +65,13 @@ A full-stack SaaS platform for travel and tour businesses, built with modern web
 ### Environment Setup
 
 1. Copy the example environment file:
+
    ```bash
    cp .env.example .env.local
    ```
 
 2. Fill in your Supabase credentials in `.env.local`:
+
    ```env
    NEXT_PUBLIC_SUPABASE_URL=your-supabase-url
    NEXT_PUBLIC_SUPABASE_ANON_KEY=your-supabase-anon-key
@@ -139,11 +141,7 @@ interface MyComponentProps {
 }
 
 export function MyComponent({ className, children }: MyComponentProps) {
-  return (
-    <div className={cn("base-classes", className)}>
-      {children}
-    </div>
-  )
+  return <div className={cn("base-classes", className)}>{children}</div>
 }
 ```
 
@@ -163,6 +161,7 @@ npm run test:coverage
 ```
 
 Unit tests are located in `__tests__/` and use:
+
 - **Jest** as the test runner
 - **React Testing Library** for component testing
 - **jsdom** environment for DOM simulation
@@ -196,7 +195,7 @@ describe("MyComponent", () => {
   })
 
   it("applies custom className", () => {
-    render(<MyComponent className="custom-class">Test</MyComponent>)
+    render(<MyComponent className='custom-class'>Test</MyComponent>)
     expect(screen.getByText("Test")).toHaveClass("custom-class")
   })
 })
@@ -220,18 +219,18 @@ test.describe("My Feature", () => {
 
 ## Available Scripts
 
-| Script | Description |
-|--------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Build for production |
-| `npm run start` | Start production server |
-| `npm run lint` | Run ESLint |
-| `npm run typecheck` | Run TypeScript type checking |
-| `npm test` | Run Jest unit tests |
-| `npm run test:watch` | Run Jest in watch mode |
-| `npm run test:coverage` | Run Jest with coverage |
-| `npm run test:e2e` | Run Playwright E2E tests |
-| `npm run test:e2e:ui` | Run Playwright with UI |
+| Script                  | Description                  |
+| ----------------------- | ---------------------------- |
+| `npm run dev`           | Start development server     |
+| `npm run build`         | Build for production         |
+| `npm run start`         | Start production server      |
+| `npm run lint`          | Run ESLint                   |
+| `npm run typecheck`     | Run TypeScript type checking |
+| `npm test`              | Run Jest unit tests          |
+| `npm run test:watch`    | Run Jest in watch mode       |
+| `npm run test:coverage` | Run Jest with coverage       |
+| `npm run test:e2e`      | Run Playwright E2E tests     |
+| `npm run test:e2e:ui`   | Run Playwright with UI       |
 
 ## Adding UI Components
 
@@ -254,3 +253,5 @@ Components are installed to `src/components/ui/`.
 ## License
 
 [MIT](LICENSE)
+
+NOTE: this will be updated upon changes on the features.
